@@ -1,9 +1,7 @@
 import pandas as pd
 
 def transform_data(data):
-    """
-    Membersihkan dan mentransformasi data hasil scraping.
-    """
+
     df = pd.DataFrame(data)
     # Hapus baris dengan Price tidak valid
     df = df[df['Price'].str.startswith('$', na=False)]

@@ -3,11 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 def scrape_fashion_studio(pages=50):
-    """
-    Scrape data produk dari https://fashion-studio.dicoding.dev/
-    Mengambil Title, Price, Rating, Colors, Size, Gender, dan timestamp.
-    Mengembalikan list of dict.
-    """
+   
     base_url = "https://fashion-studio.dicoding.dev/page{}"
     results = []
     for page in range(1, pages + 1):
@@ -21,7 +17,7 @@ def scrape_fashion_studio(pages=50):
             for product in products:
                 try:
                     title = product.find("h3", class_="product-title").get_text(strip=True)
-                    # Price bisa di <span class="price"> atau <p class="price">
+                    
                     price_tag = product.find("span", class_="price")
                     if not price_tag:
                         price_tag = product.find("p", class_="price")
@@ -54,6 +50,8 @@ def scrape_fashion_studio(pages=50):
                 except Exception as e:
                     continue
             print(f"Scraping halaman {page} berhasil. Jumlah produk: {len(products)}")
+            
+            # Error Handling
         except Exception as e:
             print(f"Error scraping page {page}: {e}")
             continue
