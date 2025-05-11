@@ -1,0 +1,14 @@
+# note
+saya menggunakan python v3.9
+
+# Menjalankan skrip
+py main.py
+
+# Menjalankan unit test pada folder tests
+py -m unittest discover tests
+
+# Menjalankan test coverage pada folder tests
+coverage run -m pytest tests
+
+# Url Google Sheets:
+https://docs.google.com/spreadsheets/d/1A-HKssY9E0QizFHG7AHxU6SEocTRWmrKyZCES4tKUBw/edit?usp=sharing
